@@ -3,11 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BreakBricks</title>
+    <title>BreakBricks Game</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="brickbreaker.png" />
   </head>
   <body>
-    <canvas id="myCanvas" width="750" height="600"></canvas>
+    <div id="startOverlay">
+      <h2>BreakBricks Game</h2>
+      <div id="nameAlert" style="color: rgb(255, 174, 0); display: none">
+        <span id="nameAlertMessage"></span>
+      </div>
+      <form id="gameForm" onsubmit="return false;">
+        <input type="text" id="playerName" placeholder="Name/名前/Tên/名字" />
+        <br />
+        <label for="rows">Insert amount of rows :</label>
+        <input
+          type="number"
+          id="rows"
+          name="rows"
+          min="1"
+          max="30"
+          value="5"
+          required
+        />
+
+        <div id="validAlert" style="color: rgb(255, 174, 0); display: none">
+          <span id="validAlertMessage"></span>
+        </div>
+        <br />
+        <label for="cols">Insert amount of columns :</label>
+        <input
+          type="number"
+          id="cols"
+          name="cols"
+          min="1"
+          max="30"
+          value="5"
+          required
+        />
+        <br />
+        <button id="startButton" type="button">Start !</button>
+        <button id="toggleLanguageButton">Switch Language</button>
+        <a
+          type="button"
+          href="https://tachibana11111.github.io/GameHub"
+          id="returnButton"
+          >Return GameHub</a
+        >
+      </form>
+    </div>
+
+    <canvas id="myCanvas" style="display: none"></canvas>
+    <div id="gameOverOverlay" style="display: none">
+      <h2 id="gameOverTitle">Game Over!</h2>
+      <p id="finalScore">Your final score: <span id="scoreDisplay"></span></p>
+      <p id="playerNameDisplay">
+        Player: <span id="gameOverPlayerName"></span>
+      </p>
+      <button id="playAgainButton">Play Again</button>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
