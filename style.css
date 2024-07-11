@@ -1,51 +1,102 @@
 body {
-    margin: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000;
-    color: #fff; /* Màu chữ trắng */
-    font-family: Arial, sans-serif;
-  }
-  
-  canvas {
-    border: 1px solid #fff;
-  }
-  
-  #score,
-  #lives {
-    position: absolute;
-    top: 10px;
-    font-size: 24px;
-  }
-  
-  #score {
-    left: 10px;
-  }
-  
-  #lives {
-    right: 10px;
-  }
-  
-  #gameOverOverlay {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    z-index: 10;
-  }
-  
-  #gameOverOverlay button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+canvas {
+  border: 1px solid #fff;
+}
+
+#myCanvas {
+  margin-top: 20px; /* Thêm khoảng cách giữa canvas và overlay */
+}
+
+#startOverlay,
+#gameOverOverlay {
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 10;
+}
+
+#startOverlay form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#startOverlay label {
+  margin-bottom: 5px;
+}
+
+#startOverlay input {
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+#startOverlay button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#returnButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#toggleLanguageButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#gameOverOverlay {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 10;
+}
+
+#gameOverOverlay button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
