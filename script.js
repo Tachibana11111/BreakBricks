@@ -3,7 +3,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const startButton = document.getElementById("startButton");
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
+  const returnButton = document.getElementById('returnButton');
 
+  if (returnButton) {
+        returnButton.addEventListener('click', () => {
+           
+            if (window.parent !== window) {
+                window.parent.postMessage('closeGame', 'https://tachibana11111.github.io');
+            } else {
+                window.location.href = 'https://tachibana11111.github.io/GameHub';
+               
+            }
+        });
+    }
+  
   let currentLanguage = "en";
   let canvasWidth;
   let canvasHeight = 600;
