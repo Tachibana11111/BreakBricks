@@ -258,6 +258,8 @@ document.addEventListener("DOMContentLoaded", () => {
         dy = -dy;
       } else if (ballY + dy > canvasHeight - ballRadius) {
         if (ballX > paddleX && ballX < paddleX + paddleWidth) {
+          let hitPoint = (ballX - (paddleX + paddleWidth / 2)) / (paddleWidth / 2);
+          dx = hitPoint * 7; 
           dy = -dy;
         } else {
           lives--;
